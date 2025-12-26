@@ -124,25 +124,35 @@ body {
       #3a3c5b 100%
     );
 }
-
-/* Chữ SECURITY giống ảnh gốc */
+/* ===== SECURITY CANH CHUẨN iPHONE ===== */
 .security-word {
   position: absolute;
-  bottom: -6%;
-  left: -12%;
-  width: 130%;
 
-  text-align: center;
-  font-size: clamp(7rem, 18vw, 11rem);
+  /* Canh đúng theo chiều cao iPhone */
+  bottom: calc(-22% + env(safe-area-inset-bottom));
+  right: -48%;
+
+  /* Kích thước chuẩn theo chiều ngang iPhone */
+  font-size: 38vw;
   font-weight: 800;
-  letter-spacing: 2.2rem;
+  letter-spacing: 4.2vw;
 
-  color: rgba(255,255,255,0.045);
-  transform: rotate(-18deg);
+  /* Độ mờ đúng app thật */
+  color: rgba(255, 255, 255, 0.016);
+
+  /* Góc nghiêng chuẩn */
+  transform: rotate(-11deg);
 
   white-space: nowrap;
   user-select: none;
+  pointer-events: none;
+
+  /* Hiệu ứng chìm (emboss) */
+  text-shadow:
+    -1px -1px 3px rgba(0,0,0,0.35),
+     1px  1px 3px rgba(255,255,255,0.04);
 }
+
 
 /* Vignette tối viền giống app */
 .bg-final::after {
