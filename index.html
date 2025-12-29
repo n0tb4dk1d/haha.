@@ -186,6 +186,21 @@ document.addEventListener('selectstart', function(e) {
     e.preventDefault();
 });
 </script>
+<script>
+let lastTouchEnd = 0;
+document.addEventListener('touchend', function (event) {
+    const now = (new Date()).getTime();
+    if (now - lastTouchEnd <= 300) {
+        event.preventDefault();
+    }
+    lastTouchEnd = now;
+}, false);
 
+document.addEventListener('touchstart', function(e){
+    if (e.touches.length > 1) {
+        e.preventDefault();
+    }
+}, { passive: false });
+</script>
 	
 </body></html>
