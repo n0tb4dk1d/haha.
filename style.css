@@ -76,7 +76,18 @@ a{text-decoration:none;}
         to {
             opacity: 0;
         }
- 
         
     }
+/* Safari iOS – chặn bôi đen & menu copy */
+* {
+    -webkit-user-select: none;
+    user-select: none;
+
+    -webkit-touch-callout: none; /* chặn menu Copy / Look Up */
+}
+
+/* Tránh zoom & long-press gây hiện menu */
+html, body {
+    -webkit-text-size-adjust: 100%;
+}
 
