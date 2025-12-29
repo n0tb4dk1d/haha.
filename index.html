@@ -141,8 +141,26 @@
     });
   }
 </script>
+<script>
+  // Safari iOS: chặn copy
+  document.addEventListener('copy', e => e.preventDefault());
+  document.addEventListener('cut', e => e.preventDefault());
+  document.addEventListener('contextmenu', e => e.preventDefault());
 
-
+  // Chặn Cmd + C (Safari Mac) & Ctrl + C
+  document.addEventListener('keydown', function(e) {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'c') {
+      e.preventDefault();
+    }
+  });
+</script>
+<script>
+  document.body.addEventListener('touchstart', function(e) {
+    if (e.touches.length === 1) {
+      e.preventDefault();
+    }
+  }, { passive: false });
+</script>
 </body>
 
 
