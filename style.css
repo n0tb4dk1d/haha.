@@ -79,4 +79,18 @@ a{text-decoration:none;}
  
         
     }
+/* Chặn chọn chữ */
+* {
+    -webkit-user-select: none; /* iOS Safari */
+    -webkit-touch-callout: none; /* Chặn menu copy khi giữ */
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Chặn kéo ảnh */
+img {
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
 		
