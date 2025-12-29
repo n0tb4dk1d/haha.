@@ -90,4 +90,9 @@ a{text-decoration:none;}
 html, body {
     -webkit-text-size-adjust: 100%;
 }
-
+/* Cho phép click nhưng vẫn không cho copy */
+.allow-click {
+    pointer-events: auto !important;
+    -webkit-user-select: none !important;
+    user-select: none !important;
+}
