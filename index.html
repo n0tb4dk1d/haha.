@@ -143,4 +143,49 @@
 </script>
 
 
+
+
+
+
+	<script>
+/* Chặn chuột phải */
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+}, false);
+
+/* Chặn các phím sao chép */
+document.addEventListener('keydown', function(e) {
+    // Ctrl+C / Ctrl+V / Ctrl+X / Ctrl+A / Ctrl+S / Ctrl+U
+    if (
+        (e.ctrlKey || e.metaKey) &&
+        ['c','v','x','a','s','u','p'].includes(e.key.toLowerCase())
+    ) {
+        e.preventDefault();
+        return false;
+    }
+
+    // F12
+    if (e.keyCode === 123) {
+        e.preventDefault();
+        return false;
+    }
+});
+
+/* Chặn copy */
+document.addEventListener('copy', function(e) {
+    e.preventDefault();
+});
+
+/* Chặn paste */
+document.addEventListener('paste', function(e) {
+    e.preventDefault();
+});
+
+/* Chặn select */
+document.addEventListener('selectstart', function(e) {
+    e.preventDefault();
+});
+</script>
+
+	
 </body></html>
